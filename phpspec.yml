@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Opus15
+        psr4_prefix: Opus15
+        src_path: app

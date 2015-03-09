@@ -13,8 +13,30 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
+		DB::table('users')->delete();
+		DB::table('users')->insert(array(
+			'login' => 'admin',
+			'password' => 'admin',
+			'type' => 'admin'
+		));
 
-		// $this->call('UserTableSeeder');
+		$this->call('NewsTableSeeder');
+	}
+
+}
+
+class NewsTableSeeder extends Seeder {
+
+	public function run()
+	{
+		Model::unguard();
+		DB::table('news')->delete();
+		DB::table('news')->insert(array(
+			'title' => 'admin',
+			'content' => 'admin',
+			'theme' => 'admin',
+		));
+
 	}
 
 }

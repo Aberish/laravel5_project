@@ -22,21 +22,4 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('NewsTableSeeder');
 	}
-
-}
-
-class NewsTableSeeder extends Seeder {
-
-	public function run()
-	{
-		Model::unguard();
-		DB::table('news')->delete();
-		DB::table('news')->insert(array(
-			'title' => 'admin',
-			'content' => 'admin',
-			'theme' => 'admin',
-		));
-
-	}
-
 }

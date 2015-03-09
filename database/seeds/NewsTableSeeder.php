@@ -6,6 +6,9 @@
  * Time: 19:50
  */
 
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
 class NewsTableSeeder extends Seeder {
 
 	public function run()

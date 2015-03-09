@@ -13,3 +13,5 @@
 
 Route::get('/', 'WelcomeController@index');
 Route::get('/pages', 'WelcomeController@index');
+Route::get('/evenements', 'EventController@index');
+Route::get('/evenements/{id}-{name}', 'EventController@show')->where(['id' => '[0-9]+', 'name' => '[a-z]+']);

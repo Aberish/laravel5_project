@@ -15,10 +15,17 @@ class CreateNewsTable extends Migration {
 		Schema::create('news', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->unsignedInteger('auteur',false);
 			$table->string('title');
 			$table->longtext('content');
 			$table->string('theme');
 			$table->timestamps();
+		});
+
+		Schema::table('news', function(Blueprint $table) {
+			$table->foreign('auteur')->references('id')->on('users')
+			      ->onDelete('restrict')
+			      ->onUpdate('restrict');
 		});
 	}
 

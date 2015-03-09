@@ -21,7 +21,14 @@ class CreateEventsTable extends Migration {
 			$table->timestamp('date_debut');
 			$table->timestamp('date_fin')->nullable();
 			$table->string('location');
+			$table->unsignedInteger('auteur',false);
 			$table->timestamps();
+		});
+
+		Schema::table('events', function(Blueprint $table) {
+			$table->foreign('auteur')->references('id')->on('users')
+			      ->onDelete('restrict')
+			      ->onUpdate('restrict');
 		});
 	}
 

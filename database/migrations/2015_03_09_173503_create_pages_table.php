@@ -16,6 +16,7 @@ class CreatePagesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title')->unique();
+			$table->string('slug')->unique();
 			$table->longtext('content');
 			$table->integer('parent_id')->nullable();
 			$table->timestamps();

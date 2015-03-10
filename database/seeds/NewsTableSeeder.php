@@ -8,6 +8,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Opus15\News;
 
 class NewsTableSeeder extends Seeder {

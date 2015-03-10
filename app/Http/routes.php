@@ -12,4 +12,3 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('/pages', 'WelcomeController@index');

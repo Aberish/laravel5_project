@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration {
 			$table->string('thumbnail');
 			$table->timestamp('date_debut');
 			$table->timestamp('date_fin')->nullable();
-			$table->string('location');
+			$table->string('location')->nullable();
 			$table->unsignedInteger('auteur',false);
 			$table->timestamps();
 		});

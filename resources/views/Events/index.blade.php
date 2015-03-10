@@ -24,4 +24,5 @@
     </tr>
 <?php endforeach; ?>
 </table>
+<?php echo $events->render(); ?>
 @stop

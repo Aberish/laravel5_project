@@ -11,9 +11,17 @@
 |
 */
 
+/* Page d'accueil */
 Route::get('/', 'WelcomeController@index');
-Route::get('/page', 'PageController@index');
+
+/* Route pour les pages */
+Route::bind('pages',function($slug) {
+	return Opus15\Page::where('slug',$slug)->first();
+});
+$router->resource('pages','PageController');
+//Route::get('/{parent}/{title}-{id}', 'PageController@show')->where(['id' => '[0-9]+', 'parent' => '[a-z]+', 'title' => '[a-z]+']);Route::get('/page', 'PageController@index');
+
+/* Route pour les évènements */
 Route::get('/evenements', 'EventController@index');
 Route::get('/evenements/{id}-{name}', 'EventController@show')->where(['id' => '[0-9]+']);
 Route::get('/{parent}/{title}-{id}', 'PageController@show')->where(['id' => '[0-9]+', 'parent' => '[a-z]+', 'title' => '[a-z]+']);
-Route::get('/{title}/{id}', 'PageController@show')->where(['id' => '[0-9]+', 'title' => '[a-z]+']);

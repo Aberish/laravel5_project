@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.2/css/material.css">--}}
 </head>
 <body>
         <nav class="navbar navbar-default">
@@ -35,7 +35,7 @@
                   </ul>
                 </li>
                 <li><a href="{{ URL::to('/evenements') }}">Evenements</a></li>
-                <li><a href="{{ URL::to('/stage') }}">Stage</a></li>
+                <li>{!! link_to_route('pages.index','Pages') !!}</li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cours</a>
                   <ul class="dropdown-menu" role="menu">

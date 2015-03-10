@@ -1,19 +1,10 @@
-@extends('...layouts.master')
+@extends('layouts.master')
 @section('content')
-<?php
-foreach ($pages as $page)
-{
-    if (($page->parent_id)!=0) { ?>
-        <h2>
-            <a href="/<?=$pages[$page->id]?>/<?=$page->title?>-<?=$page->id?>">
-                <?= $page->title ?>
-            </a>
-        </h2>
-    <?php } else { ?>
-        <h2><a href="/<?php echo(strtolower($page->title).'-'.$page->id); ?>"><?= $page->title ?></a></h2>
-    <?php } ?>
-    <p><?= nl2br($page->content)?></p>
-<?php
-}?>
-<?php echo $pages->render(); ?>
+    <h1>Liste des page</h1>
+    @foreach($pages as $page)
+        <h2>{!! link_to_route('pages.show', $page->title, [$page->slug]) !!}</h2>
+        {!! link_to_route('pages.edit','Editer la page',['slug' => $page->slug]) !!}
+        <p>{{ $page->content }}</p>
+    @endforeach
+    {!! link_to_route('pages.create','Ajouter une page') !!}
 @stop

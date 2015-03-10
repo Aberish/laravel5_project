@@ -16,7 +16,7 @@ class CreateEventsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->longText('description');
 			$table->string('thumbnail');
 			$table->timestamp('date_debut');

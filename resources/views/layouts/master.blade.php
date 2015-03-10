@@ -21,33 +21,33 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Opus15</a>
+              <a class="navbar-brand" href="{{ URL::to('/') }}">Opus15</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="/">Accueil</a></li>
+                <li><a href="{{ URL::to('') }}">Accueil</a></li>
                 <li class="dropdown">
-                  <a href="/ecole" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecole</a>
+                  <a href="{{ URL::to('/ecole') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecole</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Galeries</a></li>
+                    <li><a href={{ URL::to('/ecole/galeries') }}>Galeries</a></li>
                   </ul>
                 </li>
-                <li><a href="/evenements">Evenements</a></li>
-                <li><a href="/stage">Stage</a></li>
+                <li><a href="{{ URL::to('/evenements') }}">Evenements</a></li>
+                <li><a href="{{ URL::to('/stage') }}">Stage</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cours</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="/cours/info">presentation</a></li>
+                    <li><a href="{{ URL::to('/cours/presentation') }}">presentation</a></li>
                     <li><a href="#">Violon</a></li>
                     <li><a href="#">Guitare</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>
                 </li>
-                <li><a href="/tarifs">Tarifs</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="{{ URL::to('/tarifs') }}">Tarifs</a></li>
+                <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

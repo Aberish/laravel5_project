@@ -55,5 +55,23 @@ class PagesTableSeeder extends Seeder {
 				'updated_at' => new DateTime()
 			] );
 		}
+
+        Page::create(array(
+            'title' => 'Contact',
+            'slug' => Str::slug('Contact','-'),
+            'content' => "Adresse : 58 rue des Bergers 75015 Paris
+                        Numéro : 01.48.57.18.99",
+            'parent_id' => null,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime()
+        ));
+        Page::create(array(
+            'title' => 'Stage',
+            'slug' => Str::slug('Stage','-'),
+            'content' => "blablablaTablablablablalblalblalbllalblalblMaisOuiC'estClairblablalblalblallblalblalblalblalblallblalblalb",
+            'parent_id' => null,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime()
+        ));
 	}
 }

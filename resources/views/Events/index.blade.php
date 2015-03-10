@@ -14,7 +14,7 @@
 <?php foreach($events as $event) : ?>
 	<tr class="evenement">
 	    <td id="event-name">
-	        <a href="{{ URL::to('/evenements') }}/<?= $event->id?>-<?= $event->title?>">
+	        <a href="{{ URL::to('/evenements') }}/<?= $event->id?>-<?= $event->slug?>">
 	            <?=$event->title?>
 	        </a>
 	    </td>

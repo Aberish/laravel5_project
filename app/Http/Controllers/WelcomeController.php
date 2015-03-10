@@ -1,5 +1,5 @@
 <?php namespace Opus15\Http\Controllers;
-
+use Opus15\News;
 class WelcomeController extends Controller {
 
 	/*
@@ -30,7 +30,26 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        return view('welcome');
+        $news = \DB::table('news')
+                ->orderBy('created_at', 'desc')
+                ->take(2)
+                ->get();
+        $events = \DB::table('events')
+                ->where('date_debut','>', new \DateTime())
+                ->orwhere('date_fin','>', new \DateTime())
+                ->orderBy('date_debut', 'desc')
+                ->take(2)
+                ->get();
+        $pages = \DB::table('pages')
+            ->where('title','=', 'Stage')
+            ->orwhere('title','=', 'Contact')
+            ->get();
+        $instruments = \DB::table('pages')
+            ->where('parent_id','=',
+                \DB::table('pages')
+                    ->where('title', '=', 'Cours')->pluck('id'))
+            ->get();
+        return view('welcome',['news' => $news, 'events' => $events, 'pages' => $pages, 'instruments' => $instruments  ]);
 	}
 
 }

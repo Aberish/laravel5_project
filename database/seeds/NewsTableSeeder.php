@@ -23,7 +23,8 @@ class NewsTableSeeder extends Seeder {
 			'theme' => 'Cours',
 			'auteur' => DB::table('users')->where('login','admin')->pluck('id'),
 			'created_at' => new DateTime(),
-			'updated_at' => new DateTime()
+			'updated_at' => new DateTime(),
+            'slug' => Str::slug('Premiere news','-')
 		));
 		News::create(array(
 			'title' => 'Premiere news',
@@ -31,7 +32,8 @@ class NewsTableSeeder extends Seeder {
 			'theme' => 'Cours',
 			'auteur' => DB::table('users')->where('login','admin')->pluck('id'),
 			'created_at' => new DateTime(),
-			'updated_at' => new DateTime()
+			'updated_at' => new DateTime(),
+            'slug' => Str::slug('Seconde news','-')
 		));
 	}
 

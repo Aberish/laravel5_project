@@ -13,7 +13,7 @@
            {!! link_to_route('events.show', $event->title, [$event->slug]) !!}
 	    </td>
         <td id="event-date">
-            {{ $event->date_debut}}
+            {{ $event->date_debut }}
         </td>
     </tr>
 @endforeach

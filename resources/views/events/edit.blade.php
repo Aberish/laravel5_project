@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <h1>Editer la page : {{$event->title}}</h1>
+    <h1>Editer l'event : {{$event->title}}</h1>
 
     {!! Form::model($event, ['route' => ['events.update', 'slug' => $event->slug], 'method' => 'PUT']) !!}
         @include('events._form')

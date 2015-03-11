@@ -31,25 +31,25 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecole</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li>{!! link_to_route('pages.show','Presentation', 'Ecole') !!}</li>
-                    <li><a href={{ URL::to('/ecole/galeries') }}>Galeries</a></li>
+                    <li>{!! link_to_route('pages.show','Presentation', 'ecole') !!}</li>
+                    <li><a href={{ URL::to('/ecole/galeries') }}>galeries</a></li>
                   </ul>
                 </li>
                 <li><a href="{{ URL::to('/events') }}">Evenements</a></li>
-                <li>{!! link_to_route('pages.show','Stage', 'Stage') !!}</li>
+                <li>{!! link_to_route('pages.show','Stage', 'stage') !!}</li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cours</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li>{!! link_to_route('pages.show','Presentation', 'Cours') !!}</li>
-                    <li>{!! link_to_route('pages.show','Piano', 'Piano') !!}</li>
-                    <li>{!! link_to_route('pages.show','Guitare', 'Guitare') !!}</li>
-                    <li>{!! link_to_route('pages.show','Violon', 'Violon') !!}</li>
+                    <li>{!! link_to_route('pages.show','Presentation', 'cours') !!}</li>
+                    <li>{!! link_to_route('pages.show','Piano', 'piano') !!}</li>
+                    <li>{!! link_to_route('pages.show','Guitare', 'guitare') !!}</li>
+                    <li>{!! link_to_route('pages.show','Violon', 'violon') !!}</li>
                     <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>
                 </li>
-                <li>{!! link_to_route('pages.show','Tarifs', 'Tarifs') !!}</li>
-                <li>{!! link_to_route('pages.show','Contact', 'Contact') !!}</li>
+                <li>{!! link_to_route('pages.show','Tarifs', 'tarifs') !!}</li>
+                <li>{!! link_to_route('pages.show','Contact', 'contact') !!}</li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li>{!! link_to_route('pages.index','Edit') !!}</li>

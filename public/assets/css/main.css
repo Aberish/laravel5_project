@@ -1,0 +1,76 @@
+body{
+    background-image: url('../img/back.jpg');
+}
+
+.titre{
+    background-color: #000000;
+    color:white;
+    width:300px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 25px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.new_title{
+    background-color: #000000;
+    color:white;
+    width:inherit;
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#news{
+    width:690px;
+}
+.info{
+    width:300px;
+    border: solid 1px black;
+    float: right;
+    position:relative;
+}
+.droite{
+    float: left;
+    position:relative;
+}
+.ins{
+    background-color: #000000;
+    color:white;
+    padding: 10px;
+    text-align: center;
+    width:200px;
+    height: 100px;
+
+
+}
+.instruments{
+
+    height: 300px;
+    width:690px;
+    padding-left: 40px;
+}
+.img_header
+{
+    height:inherit;
+    width:inherit;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.carousel-inner
+{
+    height:inherit;
+
+}
+#myCarousel{
+    background-color: #000000;
+    height:400px;
+}
+.navbar{
+    margin:0px;
+}

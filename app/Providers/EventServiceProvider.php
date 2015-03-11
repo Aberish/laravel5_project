@@ -3,7 +3,7 @@
 use Illuminate\Contracts\events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\eventserviceProvider as ServiceProvider;
 
-class eventserviceProvider extends ServiceProvider {
+class EventserviceProvider extends ServiceProvider {
 
 	/**
 	 * The event handler mappings for the application.

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href='assets/css/main.css'>
+    <link rel="stylesheet" href='{{ URL::asset('assets/css/main.css') }}'>
 </head>
 <body>
         <nav class="navbar navbar-default">

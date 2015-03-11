@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <h1>Liste des page</h1>
+    <h1>Liste des pages</h1>
     @foreach($pages as $page)
         <h2>{!! link_to_route('pages.show', $page->title, [$page->slug]) !!}</h2>
         {!! link_to_route('pages.edit','Editer la page',['slug' => $page->slug]) !!}

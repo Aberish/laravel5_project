@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Opus15\Event;
 
-class EventsTableSeeder extends Seeder {
+class eventsTableSeeder extends Seeder {
 
 	public function run()
 	{

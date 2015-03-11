@@ -143,7 +143,7 @@ return [
 		'Opus15\Providers\AppServiceProvider',
 		'Opus15\Providers\BusServiceProvider',
 		'Opus15\Providers\ConfigServiceProvider',
-		'Opus15\Providers\EventServiceProvider',
+		'Opus15\Providers\eventserviceProvider',
 		'Opus15\Providers\RouteServiceProvider',
 
 	],

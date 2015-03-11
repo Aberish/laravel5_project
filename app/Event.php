@@ -11,4 +11,6 @@ class Event extends Model {
 	 */
 	protected $table = 'events';
 
+
+    protected $fillable = ['title', 'description', 'date_debut', 'date_fin', 'slug', 'updated_at'];
 }

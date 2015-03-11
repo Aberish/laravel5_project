@@ -1,9 +1,9 @@
 <?php namespace Opus15\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Opus15\Http\Requests;
-use Opus15\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
+use Opus15\Http\Requests\CreateEventRequest;
+use Opus15\Http\Requests\UpdateEventRequest;
 use Opus15\Event;
 
 class EventController extends Controller {
@@ -13,10 +13,17 @@ class EventController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+    private $event;
+
+    function __construct(Event $event)
+    {
+        $this->event = $event;
+    }
+
+        public function index()
 	{
-        $results = Event::paginate(1);
-        return view('Events.index',['events' => $results]);
+        $events = $this->event->paginate(1);
+        return view('events.index', compact('events'));
 	}
 	/**
 	 * Show the form for creating a new resource.
@@ -25,7 +32,7 @@ class EventController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        return view('events.create');
 	}
 
 	/**
@@ -33,9 +40,12 @@ class EventController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Event $event, CreateEventRequest $request)
 	{
-		//
+        $slug = Str::slug($request->get('title'),'-');
+        $event->create($request->all());
+
+        return redirect()->route('events.index');
 	}
 
 	/**
@@ -44,10 +54,9 @@ class EventController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(Event $event)
 	{
-        $results = Event::find($id);
-        return view('Events.show',['event' => $results]);
+        return view('events.show', compact('event'));
 	}
 
 	/**
@@ -56,8 +65,9 @@ class EventController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit(Event $event)
 	{
+        return view('events.edit', compact('event'));
 	}
 
 	/**
@@ -66,9 +76,20 @@ class EventController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Event $event, UpdateEventRequest $request)
 	{
-		//
+        $slug = Str::slug($request->get('title'),'-');
+
+        $event->fill([
+            'title'        => $request->get('title'),
+            'content'      => $request->get('description'),
+            'date_debut'   => $request->get('date_debut'),
+            'date_fin'     => $request->get('date_fin'),
+            'slug'         => $slug,
+            'updated_at'   => new \DateTime()
+        ])->save();
+
+        return redirect()->route('events.index');
 	}
 
 	/**
@@ -77,9 +98,10 @@ class EventController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(Event $event)
 	{
-		//
+        $event->delete();
+        return redirect()->route('events.index');
 	}
 
 }

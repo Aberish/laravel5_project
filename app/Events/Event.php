@@ -1,4 +1,4 @@
-<?php namespace Opus15\Events;
+<?php namespace Opus15\events;
 
 abstract class Event {
 

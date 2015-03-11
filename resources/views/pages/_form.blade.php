@@ -14,7 +14,7 @@
     {!! $errors->first('content', '<span class="help-block">:message</span>') !!}
 </div>
 <div class="form-group {{ $errors->has('parent_id') ? 'has-error' : '' }}">
-    {!! Form::label('parent_id','Catégoriede la page') !!}
+    {!! Form::label('parent_id','Catégorie de la page') !!}
     {!! Form::text('parent_id', null, ['class' => 'form-control']) !!}
     {!! $errors->first('parent_id', '<span class="help-block">:message</span>') !!}
 </div>

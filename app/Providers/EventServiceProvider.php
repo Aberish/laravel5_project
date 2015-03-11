@@ -1,9 +1,9 @@
 <?php namespace Opus15\Providers;
 
 use Illuminate\Contracts\events\Dispatcher as DispatcherContract;
-use Illuminate\Foundation\Support\Providers\EventserviceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
-class EventserviceProvider extends ServiceProvider {
+class EventServiceProvider extends ServiceProvider {
 
 	/**
 	 * The event handler mappings for the application.

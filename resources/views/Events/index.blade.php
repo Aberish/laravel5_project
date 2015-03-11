@@ -1,28 +1,22 @@
 @extends('...layouts.master')
-
-@section('sidebar')
-    @parent
-    <p>This is appended to the master sidebar.</p>
-@stop
-
 @section('content')
+<h1>Liste des events</h1>
 <table id="event-list">
 	<tr id="event-list-head">
 		<th>Nom de l'evenement</th>
 		<th>Date</th>
 	</tr>
-<?php foreach($events as $event) : ?>
+@foreach($events as $event) :
 	<tr class="evenement">
 	    <td id="event-name">
-	        <a href="{{ URL::to('/evenements') }}/<?= $event->id?>-<?= $event->slug?>">
-	            <?=$event->title?>
-	        </a>
+            {!! link_to_route('events.show', $event->title, [$event->slug]) !!}
+            {!! link_to_route('events.edit','Editer la Page',['slug' => $event->slug]) !!}
 	    </td>
         <td id="event-date">
-            <?= $event->date_debut?>
+            {!! nl2br($event->date_debut) !!}
         </td>
     </tr>
-<?php endforeach; ?>
+@endforeach
 </table>
 <?php echo $events->render(); ?>
 @stop

@@ -1,10 +1,12 @@
 @extends('...layouts.master')
 @section('content')
-
-<h2 id="event-title"> <?=$event->title ?></h2>
-<p id="event-date"> <?=$event->date_debut ?></p>
-<p id="event-content"><?= $event->description ?></p>
-<p><a href="{{ URL::to('/evenements') }}">Retour</a></p>
-
+    <h1>{{$event->title}}</h1>
+    <p>
+        {!! nl2br($event->description) !!}
+        {!! nl2br($event->date_debut) !!}
+    </p>
+    <p>Dernière mise à jour le : {{$event->updated_at}}</p>
+    {!! link_to_route('events.index','Retour') !!}
+    {!! link_to_route('events.edit','Editer la page',[$event->slug]) !!}
 @stop
 

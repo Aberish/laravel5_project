@@ -35,7 +35,7 @@
                     <li><a href={{ URL::to('/ecole/galeries') }}>Galeries</a></li>
                   </ul>
                 </li>
-                <li><a href="{{ URL::to('/evenements') }}">Evenements</a></li>
+                <li><a href="{{ URL::to('/events') }}">Evenements</a></li>
                 <li>{!! link_to_route('pages.show','Stage', 'Stage') !!}</li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cours</a>

@@ -29,25 +29,30 @@
               <ul class="nav navbar-nav">
                 <li><a href="{{ URL::to('') }}">Accueil</a></li>
                 <li class="dropdown">
-                  <a href="{{ URL::to('/ecole') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecole</a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ecole</a>
                   <ul class="dropdown-menu" role="menu">
+                    <li>{!! link_to_route('pages.show','Presentation', 'Ecole') !!}</li>
                     <li><a href={{ URL::to('/ecole/galeries') }}>Galeries</a></li>
                   </ul>
                 </li>
                 <li><a href="{{ URL::to('/evenements') }}">Evenements</a></li>
-                <li>{!! link_to_route('pages.index','Pages') !!}</li>
+                <li>{!! link_to_route('pages.show','Stage', 'Stage') !!}</li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cours</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ URL::to('/cours/presentation') }}">presentation</a></li>
-                    <li><a href="#">Violon</a></li>
-                    <li><a href="#">Guitare</a></li>
+                    <li>{!! link_to_route('pages.show','Presentation', 'Cours') !!}</li>
+                    <li>{!! link_to_route('pages.show','Piano', 'Piano') !!}</li>
+                    <li>{!! link_to_route('pages.show','Guitare', 'Guitare') !!}</li>
+                    <li>{!! link_to_route('pages.show','Violon', 'Violon') !!}</li>
                     <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>
                 </li>
-                <li><a href="{{ URL::to('/tarifs') }}">Tarifs</a></li>
-                <li><a href="{{ URL::to('/contact') }}">Contact</a></li>
+                <li>{!! link_to_route('pages.show','Tarifs', 'Tarifs') !!}</li>
+                <li>{!! link_to_route('pages.show','Contact', 'Contact') !!}</li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>{!! link_to_route('pages.index','Edit') !!}</li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

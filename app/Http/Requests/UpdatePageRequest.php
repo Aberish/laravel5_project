@@ -24,7 +24,7 @@ class UpdatePageRequest extends Request {
 		return [
 			'title'     => 'required',
 			'content'   => 'required',
-			'slug'      => 'required|unique:pages,slug'
+			'slug'      => 'unique:pages,slug'
 		];
 	}
 

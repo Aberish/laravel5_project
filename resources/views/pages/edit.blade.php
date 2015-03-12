@@ -3,7 +3,7 @@
     <h1>Editer la page : {{$page->title}}</h1>
 
     {!! Form::model($page, ['route' => ['pages.update', 'slug' => $page->slug], 'method' => 'PUT']) !!}
-        @include('pages._form')
+        @include('pages._form_edit')
     {!! Form::close() !!}
     <p>Dernière mise à jour le : {{$page->updated_at}}</p>
 

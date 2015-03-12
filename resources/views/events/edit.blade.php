@@ -3,7 +3,7 @@
     <h1>Editer l'event : {{$event->title}}</h1>
 
     {!! Form::model($event, ['route' => ['events.update', 'slug' => $event->slug], 'method' => 'PUT']) !!}
-        @include('events._form')
+        @include('events._form_edit')
     {!! Form::close() !!}
     <p>Dernière mise à jour le : {{$event->updated_at}}</p>
 

@@ -24,9 +24,7 @@ class UpdateEventRequest extends Request {
         return array(
             'title'     => 'required',
             'description'   => 'required',
-            'date_debut'   => 'required',
-            'date_fin'   => 'required',
-            'slug'      => 'required|unique:events,slug'
+            'slug'      => 'unique:events,slug'
         );
 	}
 

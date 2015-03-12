@@ -24,3 +24,7 @@ Route::bind('events',function($slug) {
 });
 $router->resource('events','EventController');
 /* Route pour les évènements */
+Route::bind('news',function($slug) {
+    return Opus15\News::where('slug',$slug)->first();
+});
+$router->resource('news','NewsController');

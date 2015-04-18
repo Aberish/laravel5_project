@@ -1,5 +1,6 @@
 <?php
-
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -28,3 +29,9 @@ Route::bind('news',function($slug) {
     return Opus15\News::where('slug',$slug)->first();
 });
 $router->resource('news','NewsController');
+
+Route::get('fileentry', 'FileEntryController@index');
+Route::get('fileentry/get/{filename}', [
+    'as' => 'getentry', 'uses' => 'FileEntryController@get']);
+Route::post('fileentry/add',[
+    'as' => 'addentry', 'uses' => 'FileEntryController@add']);

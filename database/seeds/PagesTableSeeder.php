@@ -59,8 +59,8 @@ class PagesTableSeeder extends Seeder {
         Page::create(array(
             'title' => 'Contact',
             'slug' => Str::slug('Contact','-'),
-            'content' => "Adresse : 58 rue des Bergers 75015 Paris
-                        Numéro : 01.48.57.18.99",
+            'content' => "Adresse : XXXXXXX
+                        Numéro : XXXXXXXX",
             'parent_id' => null,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
@@ -68,7 +68,7 @@ class PagesTableSeeder extends Seeder {
         Page::create(array(
             'title' => 'Stage',
             'slug' => Str::slug('Stage','-'),
-            'content' => "blablablaTablablablablalblalblalbllalblalblMaisOuiC'estClairblablalblalblallblalblalblalblalblallblalblalb",
+            'content' => "TestTesr",
             'parent_id' => null,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
